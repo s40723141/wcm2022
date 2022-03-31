@@ -39,6 +39,9 @@
 <p></p>
 <h1>ShareX狀況排除</h1>
 <p>在初次使用ShareX時常會遇到的狀況</p>
+<p></p>
+<p>操作影片：<a href="https://youtu.be/vEEoHVLOmt0">https://youtu.be/vEEoHVLOmt0</a></p>
+<p><a href="https://youtu.be/NwKKqGKRRao"></a>操作程序</p>
 <p><img alt="" height="1080" src="/images/0PuySxG3Eb.png" width="1920"/></p>
 <p>這是由於ShareX的錄影將一格一格的影格串連起來是透過開源的ffmpeg，</p>
 <p>使用前必須先有ffmpeg的檔案ShareX才能進行呼叫，</p>
@@ -53,4 +56,51 @@
 <p><span>4. ...</span></p>
 <p><span><img alt="" height="668" src="/images/1D.png" width="895"/></span></p>
 <p><span>5.找到自己放置的ffmpeg檔案位置，並選取ffmpeg檔案，接著按開啟，這樣就完成設定了</span></p>
-<p><span><img alt="" height="661" src="/images/1E.png" width="1137"/></span></p>
+<p><span><img alt="" height="661" src="/images/1E.png" width="1137"/></span></p><h1>Putty &amp; SSH &amp; Key 設定</h1>
+<p>為了方便執行Add，Commit，Push，這邊要開始進行Putty設定，用SSH設定近端與Github帳號間的連線，也就是所謂的Key，這樣一來，設定完成後就能省去每次A.C.P都要輸入電子郵件跟密碼的麻煩。</p>
+<p>操作影片：<a href="https://youtu.be/COpwcMVqg_w">https://youtu.be/COpwcMVqg_w</a></p>
+<p><a href="https://youtu.be/NwKKqGKRRao"></a>操作程序</p>
+<p>1.打開Puttygen程式</p>
+<p><img alt="" height="476" src="/images/1.png" width="1109"/></p>
+<p>2.點選Generate</p>
+<p><img alt="" height="511" src="/images/2.png" width="660"/></p>
+<p>3.在空白區域滑動滑鼠，因為Key的亂碼是靠滑鼠在此區域裡移動來進行亂數產生的。</p>
+<p><img alt="" height="529" src="/images/3.png" width="633"/></p>
+<p>4.複製生成的Key碼<img alt="" height="490" src="/images/4.png" width="606"/></p>
+<p>5.點選Save private key的按鈕生成ppk檔</p>
+<p><img alt="" height="482" src="/images/5.png" width="618"/></p>
+<p>6.點選確定</p>
+<p><img alt="" height="466" src="/images/6.png" width="590"/></p>
+<p>7.輸入存檔名稱</p>
+<p><img alt="" height="619" src="/images/7.png" width="993"/></p>
+<p>8.到Github官網，展開右上角帳號的下拉式個人選單，點選Settings</p>
+<p><img alt="" height="1002" src="/images/8+.png" width="1920"/></p>
+<p>9.點選左側列表的SSH and GPG keys選項 <img alt="" height="1042" src="/images/9.png" width="1920"/></p>
+<p>10.點選New SSH key按鈕在自己的Github帳號上生成鑰匙</p>
+<p><img alt="" height="1042" src="/images/10.png" width="1920"/></p>
+<p>11.貼上剛剛在Puttygen程式裡生成的Key碼，讓Github帳號的鑰匙跟可攜的鑰匙配對，輸入鑰匙名稱最後案Add SSH key按鈕<br/><img alt="" height="1042" src="/images/11.png" width="1920"/></p>
+<p>12.點選Putty.exe程式<img alt="" height="472" src="/images/12.png" width="1026"/></p>
+<p>13.在Session頁面底下的「Host Name(or IP address)」欄位輸入要連接的網頁，</p>
+<p>「Saved Sessions」底下的空白欄位命名，按「Save」按鈕，</p>
+<p><img alt="" height="441" src="/images/13.png" width="447"/></p>
+<p>14.點選左側列表的「Proxy」頁面，</p>
+<p>在「Host Name(or IP address)」欄位輸入學校的proxy碼[2001:288:6004:17::42] 、</p>
+<p>在「Prot」欄位輸入埠號3128，接著在「Proxy type」欄位勾選「HTTP」選項。</p>
+<p><img alt="" height="461" src="/images/14.png" width="481"/></p>
+<p><img alt="" height="444" src="/images/15.png" width="450"/></p>
+<p>15.<span>點選左側列表「SSH」項目旁的「+」按鈕將其展開，點選底下的「Auth」頁面，按「Browse」按鈕選擇剛剛生成的ppk檔。</span></p>
+<p><span><img alt="" height="455" src="/images/16.png" width="463"/></span></p>
+<p><span><img alt="" height="444" src="/images/17.png" width="459"/></span></p>
+<p><span><img alt="" height="567" src="/images/18.png" width="943"/></span></p>
+<p><span><img alt="" height="447" src="/images/19.png" width="453"/></span></p>
+<p><span>16.進入可攜系統的黑窗命令列輸入指令「regedit」</span></p>
+<p><span><img alt="" height="539" src="/images/20.png" width="970"/></span></p>
+<p><span>17.點選左側列表「HKEY_CURRENT_USER」資料夾旁邊的展開按鈕，</span></p>
+<p><span>點選左側列表「SOFTWARE」資料夾旁邊的展開按鈕，</span></p>
+<p><span>對底下「SimonTatham」按右鍵「匯出(E)」，</span></p>
+<p>為匯出檔案命名，存檔，最後點選剛剛匯出的reg檔案，即完成設定。</p>
+<p><span><img alt="" height="743" src="/images/21.png" width="1231"/></span></p>
+<p><span><img alt="" height="747" src="/images/22.png" width="1235"/></span></p>
+<p><span><img caption="false" height="730" src="/images/23.png" width="1220"/></span></p>
+<p><img alt="" height="502" src="/images/24.png" width="559"/></p>
+<p><span><img alt="" height="483" src="/images/25.png" width="1087"/></span></p>
