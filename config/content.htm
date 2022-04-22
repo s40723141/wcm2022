@@ -1,4 +1,21 @@
-<h1>ipv6 連線設定</h1>
+<h1>Midterm</h1>
+<p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
+<script>
+var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
+<source src="/downloads/ssh_wink/w8_project.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div><h1>ipv6 連線設定</h1>
 <p>為了因應實體ip不足的情況，以及外部連線攻擊，導致網路癱瘓，</p>
 <p>老師從ip數不足的ipv4改成新式虛擬ip充足的ipv6進行連線，</p>
 <p>因為ipv6有六個區段，外部連接的駭客要成功入侵，需要大量嘗試，較不易破解。</p>
