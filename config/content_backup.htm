@@ -1,4 +1,4 @@
-<h1>Week13-Brython設定</h1>
+<h1>Week14-</h1>
 <!-- 導入 Brython 的程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -6,7 +6,45 @@
 <script>
 window.onload=function(){brython();}
 </script>
-<p>1</p>
+<p>test</p>
+<script type="text/python3">
+#print("可執行 Brython")
+
+oldurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud_old.txt"
+newurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud.txt"
+# read old data
+old_data = open(oldurl).read()
+#print(old_data)
+# read new old_data
+new_data = open(newurl).read()
+#print(new_data)
+# put new_data into new_list by splited with \n
+new_list = new_data.split("\n")
+#print(new_list)
+# get rid of the last element of new_list
+new_list = new_list[:-1]
+#print(new_list)
+# from old_data, split with \n and \t to get studnum, github and grpnum
+# get rid of the first line of old_data which is data title
+for i in old_data.split("\n")[1:]:
+    studnum, github, grpnum = i.split("\t")
+    if studnum in new_list:
+        if github == "":
+            github = studnum
+        print(str(studnum) + "\t" + str(github) + "\t" + str(grpnum))
+
+#標尾
+</script>
+<div id="brython_div"></div>
+<p></p><h1>Week13-Brython設定</h1>
+<!-- 導入 Brython 的程式庫 -->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){brython();}
+</script>
+<p>test</p>
 <script type="text/python3">
 #print("可執行 Brython")
 
@@ -180,7 +218,8 @@ for i in range(5):
 browser.timer.set_interval(game, 100)
 </script>
 <div id="brython_div"></div>
-<p></p><h1>Midterm</h1>
+<p></p>
+<h1>Midterm</h1>
 <p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
 <script>
 var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
@@ -304,7 +343,8 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <p><span><img alt="" height="747" src="/images/22.png" width="1235"/></span></p>
 <p><span><img caption="false" height="730" src="/images/23.png" width="1220"/></span></p>
 <p><img alt="" height="502" src="/images/24.png" width="559"/></p>
-<p><span><img alt="" height="483" src="/images/25.png" width="1087"/></span></p><h1>nginx 設定</h1>
+<p><span><img alt="" height="483" src="/images/25.png" width="1087"/></span></p>
+<h1>nginx 設定</h1>
 <p>操作影片：<a href="https://youtu.be/LSE6rWOk46g">https://youtu.be/LSE6rWOk46g</a></p>
 <p><a href="https://youtu.be/COpwcMVqg_w"></a><a href="https://youtu.be/NwKKqGKRRao"></a>操作程序。</p>
 <p>1.在黑窗中輸入指令「Pythin -m http.server」</p>
