@@ -8,24 +8,26 @@ window.onload=function(){brython();}
 </script>
 <p>test</p>
 <script type="text/python3">
-#print("可執行 Brython")
+print("可執行 Brython, check point 1")
 
 oldurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud_old.txt"
 newurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud.txt"
 # read old data
 old_data = open(oldurl).read()
-#print(old_data)
+print(old_data)
 # read new old_data
 new_data = open(newurl).read()
-#print(new_data)
+print(new_data)
 # put new_data into new_list by splited with \n
 new_list = new_data.split("\n")
+print(" check point 2")
 #print(new_list)
 # get rid of the last element of new_list
 new_list = new_list[:-1]
 #print(new_list)
 # from old_data, split with \n and \t to get studnum, github and grpnum
 # get rid of the first line of old_data which is data title
+
 for i in old_data.split("\n")[1:]:
     studnum, github, grpnum = i.split("\t")
     if studnum in new_list:
@@ -46,7 +48,7 @@ window.onload=function(){brython();}
 </script>
 <p>test</p>
 <script type="text/python3">
-#print("可執行 Brython")
+print("可執行 Brython")
 
 # 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
 # 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc
@@ -218,8 +220,7 @@ for i in range(5):
 browser.timer.set_interval(game, 100)
 </script>
 <div id="brython_div"></div>
-<p></p>
-<h1>Midterm</h1>
+<p></p><h1>Midterm</h1>
 <p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
 <script>
 var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
@@ -246,37 +247,36 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <p>1.左下windows開始按鈕</p>
 <p><img alt="" height="222" src="/images/未命名.jpg" width="332"/></p>
 <p>2.設定齒輪</p>
-<p><img alt="" height="218" src="/images/2.jpg" width="328"/></p>
+<p><img alt="" height="295" src="/images/1aa.jpg" width="372"/></p>
 <p>3.網路和網際網路</p>
-<p><img alt="" height="668" src="/images/3.png" width="1413"/></p>
+<p><img alt="" height="131" src="/images/1bb.jpg" width="307"/></p>
 <p>4.乙太網路</p>
-<p><img alt="" height="562" src="/images/4.png" width="706"/></p>
+<p><img alt="" height="89" src="/images/1cc.jpg" width="337"/></p>
 <p>5.變更介面卡選項</p>
-<p><img alt="" height="240" src="/images/5.png" width="314"/></p>
+<p><img alt="" height="82" src="/images/1dd.jpg" width="170"/></p>
 <p>6.快速點擊兩次乙太網路</p>
-<p><img alt="" height="304" src="/images/6.png" width="662"/></p>
+<p><img alt="" height="97" src="/images/1ee.jpg" width="278"/></p>
 <p>7.乙太網路內容</p>
-<p><img alt="" height="527" src="/images/7.png" width="438"/></p>
+<p><img alt="" height="575" src="/images/1ff.jpg" width="523"/></p>
 <p>8.取消勾選ipv4，防止外部連線攻擊</p>
 <p><img alt="" height="587" src="/images/8.png" width="444"/></p>
 <p>9.勾選ipv6切換為虛擬ip</p>
-<p><img alt="" height="581" src="/images/9.png" width="444"/></p>
+<p><img alt="" height="632" src="/images/1hh.jpg" width="495"/></p>
 <p>10.ipv6內容</p>
-<p><img alt="" height="572" src="/images/10.png" width="442"/></p>
+<p><img alt="" height="628" src="/images/1jj.jpg" width="490"/></p>
 <p>11.開啟dns代理主機選項</p>
-<p><img alt="" height="526" src="/images/11.png" width="632"/></p>
+<p><img alt="" height="663" src="/images/1kk.jpg" width="753"/></p>
 <p>12.定位代理主機位置，系上的主機號碼為：「2001:b000:168::1」</p>
-<p><img alt="" height="529" src="/images/12.png" width="639"/></p>
+<p><img alt="" height="657" src="/images/1ll.jpg" width="725"/></p>
 <p>13.Proxy</p>
-<p><img alt="" height="448" src="/images/13.png" width="426"/></p>
+<p><img alt="" height="67" src="/images/1nn.jpg" width="218"/></p>
 <p>14.開啟Proxy設定</p>
-<p><img alt="" height="990" src="/images/14.png" width="832"/></p>
+<p><img alt="" height="497" src="/images/1oo.jpg" width="536"/></p>
 <p>15.設定代理主機位置，系上號碼為：「2001:288:6004:17::42」</p>
-<p><img alt="" height="477" src="/images/15.png" width="547"/></p>
+<p><img alt="" height="484" src="/images/1pp.jpg" width="543"/></p>
 <p>16.設定連接埠。埠號為：「3128」</p>
-<p><img alt="" height="487" src="/images/16.png" width="501"/></p>
-<p></p>
-<h1>ShareX 狀況排除</h1>
+<p><img alt="" height="497" src="/images/1qq.jpg" width="508"/></p>
+<p></p><h1>ShareX 狀況排除</h1>
 <p>在初次使用ShareX時常會遇到的狀況</p>
 <p></p>
 <p>操作影片：<a href="https://youtu.be/vEEoHVLOmt0">https://youtu.be/vEEoHVLOmt0</a></p>

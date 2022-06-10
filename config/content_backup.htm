@@ -8,24 +8,26 @@ window.onload=function(){brython();}
 </script>
 <p>test</p>
 <script type="text/python3">
-#print("可執行 Brython")
+print("可執行 Brython, check point 1")
 
 oldurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud_old.txt"
 newurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud.txt"
 # read old data
 old_data = open(oldurl).read()
-#print(old_data)
+print(old_data)
 # read new old_data
 new_data = open(newurl).read()
-#print(new_data)
+print(new_data)
 # put new_data into new_list by splited with \n
 new_list = new_data.split("\n")
+print(" check point 2")
 #print(new_list)
 # get rid of the last element of new_list
 new_list = new_list[:-1]
 #print(new_list)
 # from old_data, split with \n and \t to get studnum, github and grpnum
 # get rid of the first line of old_data which is data title
+
 for i in old_data.split("\n")[1:]:
     studnum, github, grpnum = i.split("\t")
     if studnum in new_list:
@@ -46,7 +48,7 @@ window.onload=function(){brython();}
 </script>
 <p>test</p>
 <script type="text/python3">
-#print("可執行 Brython")
+print("可執行 Brython")
 
 # 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
 # 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc
@@ -218,8 +220,7 @@ for i in range(5):
 browser.timer.set_interval(game, 100)
 </script>
 <div id="brython_div"></div>
-<p></p>
-<h1>Midterm</h1>
+<p></p><h1>Midterm</h1>
 <p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
 <script>
 var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
