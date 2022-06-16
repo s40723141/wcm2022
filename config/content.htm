@@ -1,4 +1,28 @@
-<h1>Week 15-Tetris</h1>
+<h1>Tetris程式的小技巧</h1>
+<p>1.方塊形狀</p>
+<p>方塊的形狀是由以下的程式碼進行決定的 </p>
+<p><img alt="" height="162" src="/images/aaa2copy.png"/></p>
+<p>數列會按照下圖進行組合，形成方塊形狀，</p>
+<p><img alt="" height="291" src="/images/aaab.PNG" width="432"/></p>
+<p>程式中每一行代表一種形狀的方塊，同一行為該種方塊之旋轉放置的排列。</p>
+<p>也就是說，可以透過移除某一行程式，來移除自己不善長使用之方塊。</p>
+<p>2.方塊下降速度-時間</p>
+<p>方塊下落的速度由兩個部分決定，一個是下降時間，另一個是下降距離，</p>
+<p>時間決定多久會下降一次，聚集決定下降一次將下降多少格，</p>
+<p>下降時間是由下圖中程式碼 第75行的level決定的，當等級越高，下降速度越快。</p>
+<p>可以透過下修level，來拉長下降時間並降低難度。</p>
+<p><img alt="" height="194" src="/images/aaac.PNG" width="237"/></p>
+<p>3.方塊下降速度-距離</p>
+<p>方塊下落的速度由兩個部分決定，一個是下降時間，另一個是下降距離，</p>
+<p>時間決定多久會下降一次，距離決定下降一次將下降多少格，</p>
+<p>下降距離是由下圖中程式碼第131、132、136、138行來決定的，</p>
+<p>透過修改程式碼「self.figure.y +=」</p>
+<p>                    「<span>self.figure.y  -=」後之數字可以修改下降距離，</span></p>
+<p><span>但這麼做也會因此產生bug，導致方塊在降到底部時會凸出底層界線導致遊戲終止。</span></p>
+<p><img alt="" height="197" src="/images/aaad.PNG" width="340"/></p>
+<script type="text/python3">
+print("可執行 Brython")
+</script><h1>Week 15-Tetris</h1>
 <!-- 導入 Brython 的程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -6,7 +30,6 @@
 <script>
 window.onload=function(){brython();}
 </script>
-<p>test</p>
 <script type="text/python3">
 print("可執行 Brython")
 
@@ -72,7 +95,7 @@ class Figure:
 
 
 class Tetris:
-    level = 2
+    level = 0.75
     score = 0
     state = "start"
     field = []
@@ -245,8 +268,24 @@ doc.addEventListener("keyup", key_up)
 browser.timer.set_interval(do_game, fps)
 </script>
 <div id="brython_div"></div>
-<p></p>
-<h1>Week14</h1>
+<p>如何在網頁中嵌入俄羅斯方塊遊戲。</p>
+<p>首先點選「Edit」按鈕<img alt="" height="533" src="/images/aaa7.png" width="1093"/></p>
+<p>接著點選「&lt;&gt;」按鈕展開程式碼進行編輯</p>
+<p><img alt="" height="638" src="/images/aaa8.png" width="1161"/></p>
+<p><img alt="" height="841" src="/images/aaa9.PNG" width="1418"/></p>
+<p>程式碼內容如下</p>
+<p>首先由此段程式導入Brython。</p>
+<p><img alt="" height="50" src="/images/aaa1.PNG" width="417"/></p>
+<p>導入Brython後必須以以下程式啟動Brython</p>
+<p><img alt="" height="120" src="/images/aaa1a.PNG" width="358"/></p>
+<p>接著放入俄羅斯方塊遊戲的主程式碼</p>
+<p><img alt="" height="928" src="/images/aaa2.PNG" width="613"/></p>
+<p><img alt="" height="665" src="/images/aaa3.PNG" width="579"/></p>
+<p><img alt="" height="875" src="/images/aaa4.PNG" width="732"/></p>
+<p><img alt="" height="634" src="/images/aaa5.PNG" width="438"/></p>
+<p><img alt="" height="623" src="/images/aaa6.PNG" width="846"/></p>
+<p>最後要以標尾來封閉這個段落，方可執行</p>
+<p><img alt="" height="40" src="/images/aaa6a.PNG" width="291"/></p><h1>Week14</h1>
 <!-- 導入 Brython 的程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
