@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='Week 15-Tetris.html'>Week 15-Tetris</a><li><a href='Week14.html'>Week14</a><li><a href='Week13-Brython設定.html'>Week13-Brython設定</a><li><a href='Midterm.html'>Midterm</a><li><a href='ipv6 連線設定.html'>ipv6 連線設定</a><li><a href='ShareX 狀況排除.html'>ShareX 狀況排除</a><li><a href='Putty & SSH & Key設定.html'>Putty & SSH & Key設定</a><li><a href='nginx 設定.html'>nginx 設定</a></li>
+                     <li><a href='Week17 任務.html'>Week17 任務</a><li><a href='Tetris程式的小技巧.html'>Tetris程式的小技巧</a><li><a href='Week 15-Tetris.html'>Week 15-Tetris</a><li><a href='Week13-Brython設定.html'>Week13-Brython設定</a><li><a href='Midterm.html'>Midterm</a><li><a href='ipv6 連線設定.html'>ipv6 連線設定</a><li><a href='ShareX 狀況排除.html'>ShareX 狀況排除</a><li><a href='Putty & SSH & Key設定.html'>Putty & SSH & Key設定</a><li><a href='nginx 設定.html'>nginx 設定</a></li>
                       </ul>
                 </nav>
               </div>
@@ -139,74 +139,32 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Week 15-Tetris << <a href='Week 15-Tetris.html'>Previous</a> <a href='Week13-Brython設定.html'>Next</a> >> Week13-Brython設定<br /><h1>Week14</h1>
-<!-- 導入 Brython 的程式庫 -->
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){brython();}
-</script>
-<p>test</p>
+    <div id="tipue_search_content">Week17 任務 << <a href='Week17 任務.html'>Previous</a> <a href='Week 15-Tetris.html'>Next</a> >> Week 15-Tetris<br /><h1>Tetris程式的小技巧</h1>
+<p>1.方塊形狀</p>
+<p>方塊的形狀是由以下的程式碼進行決定的 </p>
+<p><img alt="" height="162" src="./../images/aaa2copy.png"/></p>
+<p>數列會按照下圖進行組合，形成方塊形狀，</p>
+<p><img alt="" height="291" src="./../images/aaab.PNG" width="432"/></p>
+<p>程式中每一行代表一種形狀的方塊，同一行為該種方塊之旋轉放置的排列。</p>
+<p>也就是說，可以透過移除某一行程式，來移除自己不善長使用之方塊。</p>
+<p>2.方塊下降速度-時間</p>
+<p>方塊下落的速度由兩個部分決定，一個是下降時間，另一個是下降距離，</p>
+<p>時間決定多久會下降一次，聚集決定下降一次將下降多少格，</p>
+<p>下降時間是由下圖中程式碼 第75行的level決定的，當等級越高，下降速度越快。</p>
+<p>可以透過下修level，來拉長下降時間並降低難度。</p>
+<p><img alt="" height="194" src="./../images/aaac.PNG" width="237"/></p>
+<p>3.方塊下降速度-距離</p>
+<p>方塊下落的速度由兩個部分決定，一個是下降時間，另一個是下降距離，</p>
+<p>時間決定多久會下降一次，距離決定下降一次將下降多少格，</p>
+<p>下降距離是由下圖中程式碼第131、132、136、138行來決定的，</p>
+<p>透過修改程式碼「self.figure.y +=」</p>
+<p>                    「<span>self.figure.y  -=」後之數字可以修改下降距離，</span></p>
+<p><span>但這麼做也會因此產生bug，導致方塊在降到底部時會凸出底層界線導致遊戲終止。</span></p>
+<p><img alt="" height="197" src="./../images/aaad.PNG" width="340"/></p>
 <script type="text/python3">
 print("可執行 Brython")
-
-# 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
-# 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc
-from browser import document as doc
-# 從 browser 模組導入 html 類別, 主要用於建立 CANVAS 標註物件, 並插入頁面中
-from browser import html
-# 用於定時執行特定函式
-import browser.timer
-# 導入亂數模組
-from random import random, randint
-
-# 利用 html 建立一個 CANVAS 標註物件, 與變數 canvas 對應
-canvas = html.CANVAS(width = 600, height = 600)
-# 將 canvas 標註的 id 設為 "canvas"
-canvas.id = "canvas"
-# 將 document 中 id 為 "brython_div" 的標註 
-# 設為與 brython_div 變數對應
-brython_div = doc["brython_div"]
-# 將 canvas 標註放入 brython_div 所在位置
-# 頁面中原本就已經放入 <div id="brython_div"></div> 標註
-brython_div <= canvas
-# 將頁面中 id 為 canvas 的 CANVAS 設為與 canvas 變數對應
-canvas = doc["canvas"]
-# 將 canvas 的 2d 繪圖 context 命名為 ctx
-ctx = canvas.getContext("2d")
-
-
-oldurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud_old.txt"
-newurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud.txt"
-# read old data
-old_data = open(oldurl).read()
-print(old_data)
-# read new old_data
-new_data = open(newurl).read()
-print(new_data)
-# put new_data into new_list by splited with \n
-new_list = new_data.split("\n")
-print(" check point 2")
-#print(new_list)
-# get rid of the last element of new_list
-new_list = new_list[:-1]
-#print(new_list)
-# from old_data, split with \n and \t to get studnum, github and grpnum
-# get rid of the first line of old_data which is data title
-
-for i in old_data.split("\n")[1:]:
-    studnum, github, grpnum = i.split("\t")
-    if studnum in new_list:
-        if github == "":
-            github = studnum
-        print(str(studnum) + "\t" + str(github) + "\t" + str(grpnum))
-
-#標尾
 </script>
-<div id="brython_div"></div>
-<p></p>
-<br />Week 15-Tetris << <a href='Week 15-Tetris.html'>Previous</a> <a href='Week13-Brython設定.html'>Next</a> >> Week13-Brython設定</div>
+<br />Week17 任務 << <a href='Week17 任務.html'>Previous</a> <a href='Week 15-Tetris.html'>Next</a> >> Week 15-Tetris</div>
         
     <!-- footer -->
       <div class="container">

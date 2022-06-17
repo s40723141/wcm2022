@@ -1,5 +1,6 @@
 <h1>Week17 任務</h1>
-<p><a href="https://youtu.be/WnrCyQW-rwU">https://youtu.be/WnrCyQW-rwU</a></p><h1>Tetris程式的小技巧</h1>
+<p><a href="https://youtu.be/WnrCyQW-rwU">https://youtu.be/WnrCyQW-rwU</a></p>
+<h1>Tetris程式的小技巧</h1>
 <p>1.方塊形狀</p>
 <p>方塊的形狀是由以下的程式碼進行決定的 </p>
 <p><img alt="" height="162" src="/images/aaa2copy.png"/></p>
@@ -287,72 +288,7 @@ browser.timer.set_interval(do_game, fps)
 <p><img alt="" height="634" src="/images/aaa5.PNG" width="438"/></p>
 <p><img alt="" height="623" src="/images/aaa6.PNG" width="846"/></p>
 <p>最後要以標尾來封閉這個段落，方可執行</p>
-<p><img alt="" height="40" src="/images/aaa6a.PNG" width="291"/></p><h1>Week14</h1>
-<!-- 導入 Brython 的程式庫 -->
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){brython();}
-</script>
-<p>test</p>
-<script type="text/python3">
-print("可執行 Brython")
-
-# 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
-# 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc
-from browser import document as doc
-# 從 browser 模組導入 html 類別, 主要用於建立 CANVAS 標註物件, 並插入頁面中
-from browser import html
-# 用於定時執行特定函式
-import browser.timer
-# 導入亂數模組
-from random import random, randint
-
-# 利用 html 建立一個 CANVAS 標註物件, 與變數 canvas 對應
-canvas = html.CANVAS(width = 600, height = 600)
-# 將 canvas 標註的 id 設為 "canvas"
-canvas.id = "canvas"
-# 將 document 中 id 為 "brython_div" 的標註 
-# 設為與 brython_div 變數對應
-brython_div = doc["brython_div"]
-# 將 canvas 標註放入 brython_div 所在位置
-# 頁面中原本就已經放入 <div id="brython_div"></div> 標註
-brython_div <= canvas
-# 將頁面中 id 為 canvas 的 CANVAS 設為與 canvas 變數對應
-canvas = doc["canvas"]
-# 將 canvas 的 2d 繪圖 context 命名為 ctx
-ctx = canvas.getContext("2d")
-
-
-oldurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud_old.txt"
-newurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud.txt"
-# read old data
-old_data = open(oldurl).read()
-print(old_data)
-# read new old_data
-new_data = open(newurl).read()
-print(new_data)
-# put new_data into new_list by splited with \n
-new_list = new_data.split("\n")
-print(" check point 2")
-#print(new_list)
-# get rid of the last element of new_list
-new_list = new_list[:-1]
-#print(new_list)
-# from old_data, split with \n and \t to get studnum, github and grpnum
-# get rid of the first line of old_data which is data title
-
-for i in old_data.split("\n")[1:]:
-    studnum, github, grpnum = i.split("\t")
-    if studnum in new_list:
-        if github == "":
-            github = studnum
-        print(str(studnum) + "\t" + str(github) + "\t" + str(grpnum))
-
-#標尾
-</script>
-<div id="brython_div"></div>
+<p><img alt="" height="40" src="/images/aaa6a.PNG" width="291"/></p>
 <p></p>
 <h1>Week13-Brython設定</h1>
 <!-- 導入 Brython 的程式庫 -->
