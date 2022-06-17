@@ -1,4 +1,5 @@
-<h1>Tetris程式的小技巧</h1>
+<h1>Week17</h1>
+<p><a href="https://youtu.be/WnrCyQW-rwU">https://youtu.be/WnrCyQW-rwU</a></p><h1>Tetris程式的小技巧</h1>
 <p>1.方塊形狀</p>
 <p>方塊的形狀是由以下的程式碼進行決定的 </p>
 <p><img alt="" height="162" src="/images/aaa2copy.png"/></p>
@@ -9,10 +10,21 @@
 <p>2.方塊下降速度-時間</p>
 <p>方塊下落的速度由兩個部分決定，一個是下降時間，另一個是下降距離，</p>
 <p>時間決定多久會下降一次，聚集決定下降一次將下降多少格，</p>
-<p></p>
+<p>下降時間是由下圖中程式碼 第75行的level決定的，當等級越高，下降速度越快。</p>
+<p>可以透過下修level，來拉長下降時間並降低難度。</p>
+<p><img alt="" height="194" src="/images/aaac.PNG" width="237"/></p>
+<p>3.方塊下降速度-距離</p>
+<p>方塊下落的速度由兩個部分決定，一個是下降時間，另一個是下降距離，</p>
+<p>時間決定多久會下降一次，距離決定下降一次將下降多少格，</p>
+<p>下降距離是由下圖中程式碼第131、132、136、138行來決定的，</p>
+<p>透過修改程式碼「self.figure.y +=」</p>
+<p>                    「<span>self.figure.y  -=」後之數字可以修改下降距離，</span></p>
+<p><span>但這麼做也會因此產生bug，導致方塊在降到底部時會凸出底層界線導致遊戲終止。</span></p>
+<p><img alt="" height="197" src="/images/aaad.PNG" width="340"/></p>
 <script type="text/python3">
 print("可執行 Brython")
-</script><h1>Week 15-Tetris</h1>
+</script>
+<h1>Week 15-Tetris</h1>
 <!-- 導入 Brython 的程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -85,7 +97,7 @@ class Figure:
 
 
 class Tetris:
-    level = 0.75
+    level = 1
     score = 0
     state = "start"
     field = []
