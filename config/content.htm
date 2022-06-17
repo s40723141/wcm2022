@@ -1,5 +1,5 @@
 <h1>Week17 任務</h1>
-<p><a href="https://youtu.be/WnrCyQW-rwU">https://youtu.be/WnrCyQW-rwU</a></p>
+<p><a href="https://youtu.be/Qe1hZ9tGA68">https://youtu.be/Qe1hZ9tGA68</a></p>
 <h1>Tetris程式的小技巧</h1>
 <p>1.方塊形狀</p>
 <p>方塊的形狀是由以下的程式碼進行決定的 </p>
@@ -98,7 +98,7 @@ class Figure:
 
 
 class Tetris:
-    level = 1
+    level = 2
     score = 0
     state = "start"
     field = []
@@ -265,6 +265,18 @@ def do_game():
                     ctx.fillRect(game.x + game.zoom * (j + game.figure.x) + 1,
                                       game.y + game.zoom * (i + game.figure.y) + 1,
                                       game.zoom - 2, game.zoom - 2)
+
+    ctx.font = '50px serif'
+    ctx.fillStyle = BLACK
+    ctx.fillText('Score:'+ str(game.score), 150,40)
+    
+
+    int = 1
+    if game.score >= int:
+        ctx.fillStyle = WHITE
+        ctx.fillRect( 150, 0, 200, 50)
+        ctx.fillStyle = BLACK
+        ctx.fillText(str(game.score), 150,40)
 
 doc.addEventListener("keydown", key_down)
 doc.addEventListener("keyup", key_up)
