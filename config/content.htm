@@ -673,7 +673,7 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <p>16.在網址列輸入localhost，當出現下列畫面時即代表設定成功</p>
 <p><img alt="" height="106" src="/images/24.jpg" width="814"/></p>
 <p><img alt="" height="1080" src="/images/25.jpg" width="1920"/></p>
-<h1>test</h1>
+<h1>Week18 試做</h1>
 <!-- 導入 Brython 的程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -771,7 +771,7 @@ class Tetris:
             self.field.append(new_line)
 
     def new_figure(self):
-        self.figure = Figure(3, 0)
+        self.figure = Figure(3, 16)
 
     def intersects(self):
         intersection = False
@@ -779,10 +779,10 @@ class Tetris:
             for j in range(4):
                 if i * 4 + j in self.figure.image():
                     # block 到達底部, 左右兩邊界, 或該座標有其他 block
-                    if i + self.figure.y > self.height - 1 or \
+                    if i + self.figure.y > self.height - 1  or \
                             j + self.figure.x > self.width - 1 or \
                             j + self.figure.x < 0 or \
-                            self.field[i + self.figure.y][j + self.figure.x] > 0:
+                            self.field[i + self.figure.y][j + self.figure.x] > 0 :
                         intersection = True
         return intersection
 
@@ -806,7 +806,7 @@ class Tetris:
         self.figure.y += 1
         self.freeze()
 
-    def go_up(self):
+    def go_down(self):
         self.figure.y -= 1
         if self.intersects():
             self.figure.y += 1
@@ -931,5 +931,15 @@ doc.addEventListener("keyup", key_up)
 browser.timer.set_interval(do_game, fps)
 </script>
 <div id="brython_div"></div>
-<p>1</p>
-<p></p>
+<p>目前只有研究出讓方塊往上浮的方法，無法做出到頂層停住。</p>
+<p>俄羅斯方塊的程式碼是由以下部分生成新的方塊的，原先的程式碼是</p>
+<p>self.figure = Figure(3,0)，也就是說在3,0這個座標生成新的方塊，</p>
+<p>將程式碼的位置改為(3,16)，如下圖，則可以使新方塊生成在底部。</p>
+<p><img alt="" height="50" src="/images/202206191.PNG" width="225"/></p>
+<p>另外，控制方塊下落的程式碼為此處程式，</p>
+<p>透過def go_space(self): 與 <span>def go_down(self): 兩部分底下的</span></p>
+<p>self.figure.y +=1</p>
+<p>self.figure.y -=1</p>
+<p>來進行控制，要使方塊下落變成上浮，則需要改動此部分程式碼。</p>
+<p>反轉正負號，如下圖，即可使方塊移動的方向由下落改成上浮。</p>
+<p><img alt="" height="197" src="/images/202206192.PNG" width="246"/></p>
