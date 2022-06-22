@@ -936,9 +936,10 @@ browser.timer.set_interval(do_game, fps)
 <p>self.figure = Figure(3,0)，也就是說在3,0這個座標生成新的方塊，</p>
 <p>將程式碼的位置改為(3,16)，如下圖，則可以使新方塊生成在底部。</p>
 <p><img alt="" height="50" src="/images/202206191.PNG" width="225"/></p>
-<p>另外，要使方塊下落變成上浮，則需要改動此部分程式碼。</p>
-<p>將def go_space(self): 與 <span>def go_down(self): 兩部分底下的</span></p>
+<p>另外，控制方塊下落的程式碼為此處程式，</p>
+<p>透過def go_space(self): 與 <span>def go_down(self): 兩部分底下的</span></p>
 <p>self.figure.y +=1</p>
 <p>self.figure.y -=1</p>
+<p>來進行控制，要使方塊下落變成上浮，則需要改動此部分程式碼。</p>
 <p>反轉正負號，如下圖，即可使方塊移動的方向由下落改成上浮。</p>
 <p><img alt="" height="197" src="/images/202206192.PNG" width="246"/></p>
